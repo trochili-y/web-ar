@@ -7,6 +7,7 @@ var result = json.parse(jsonData)
 // alert(data.lat+"www")
 var x=document.querySelector("#test")
 x.innerHTML=result
+alert(result)
 
 
 if(navigator.geolocation){
