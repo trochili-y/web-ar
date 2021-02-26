@@ -11,9 +11,10 @@ if(navigator.geolocation){
         // '海拔: '          + position.coords.altitude          + '\n' +
         // '水平精度: '          + position.coords.accuracy          + '\n' +
         // '垂直精度: ' + position.coords.altitudeAccura)
-        var latitude=position.coords.latitude  
+        // var latitude=position.coords.latitude  
+        
   }
- alert(latitude)
+ alert(position.coords.latitude)
   //定位数据获取失败响应
   function onError(error) {
     switch(error.code)
