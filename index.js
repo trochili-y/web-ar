@@ -1,7 +1,10 @@
 // import { getMyAddress } from "./request";
+
 var search = window.location.search;
 var data = getSearchString('res', search);
-alert(data.lat+"www")
+// alert(data.lat+"www")
+var x=document.querySelector("#test")
+x.innerHTML=data
 
 
 if(navigator.geolocation){
