@@ -1,7 +1,7 @@
 // import { getMyAddress } from "./request";
 var search = window.location.search;
 var data = getSearchString('res', search);
-alert(data.lat)
+alert(data.lat+"www")
 
 
 if(navigator.geolocation){
