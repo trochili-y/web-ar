@@ -1,6 +1,6 @@
 // import { getMyAddress } from "./request";
 var search = window.location.search;
-var data = getSearchString('data', search);
+var data = getSearchString('res', search);
 alert(data)
 
 
