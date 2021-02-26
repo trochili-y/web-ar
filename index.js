@@ -4,7 +4,7 @@ var search = window.location.search;
 var data = getSearchString('res', search);
 // alert(data.lat+"www")
 var x=document.querySelector("#test")
-x.innerHTML=data
+x.innerHTML=data[0]
 
 
 if(navigator.geolocation){
