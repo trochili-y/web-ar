@@ -1,3 +1,8 @@
+// import { getMyAddress } from "./request";
+var search = window.location.search;
+var data = getSearchString('data', search);
+alert(data)
+
 
 if(navigator.geolocation){
     navigator.geolocation.getCurrentPosition(onSuccess , onError);
@@ -12,9 +17,12 @@ if(navigator.geolocation){
         // '海拔: '          + position.coords.altitude          + '\n' +
         // '水平精度: '          + position.coords.accuracy          + '\n' +
         // '垂直精度: ' + position.coords.altitudeAccura)
-        lat=position.coords.latitude  
- alert(lat)
-        
+            lat=position.coords.latitude  
+            lng=position.coords.longitude 
+            _res={lat,lng}
+            // var search = window.location.search;
+            // var data = getSearchString('data', search);
+            // alert(data)
   }
   //定位数据获取失败响应
   function onError(error) {
@@ -33,4 +41,16 @@ if(navigator.geolocation){
       alert("未知错误");
       break;
     }
+  }
+
+  function getSearchString(key, Url) {
+    var str = Url;
+    str = str.substring(1, str.length);
+    var arr = str.split("?");
+    var obj = new Object();
+    for (var i = 0; i < arr.length; i++) {
+      var tmp_arr = arr[i].split("=");
+      obj[decodeURIComponent(tmp_arr[0])] = decodeURIComponent(tmp_arr[1]);
+    }
+    return obj[key];
   }
