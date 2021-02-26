@@ -5,7 +5,7 @@ if(navigator.geolocation){
     alert("您的浏览器不支持使用HTML 5来获取地理位置服务");
   }
   //定位数据获取成功响应
-  var lat
+  
   function  onSuccess(position){
         // alert('纬度: '          + position.coords.latitude          + '\n' +
         // '经度: '         + position.coords.longitude         + '\n' +
@@ -13,9 +13,9 @@ if(navigator.geolocation){
         // '水平精度: '          + position.coords.accuracy          + '\n' +
         // '垂直精度: ' + position.coords.altitudeAccura)
         lat=position.coords.latitude  
+ alert(lat)
         
   }
- alert(lat)
   //定位数据获取失败响应
   function onError(error) {
     switch(error.code)
