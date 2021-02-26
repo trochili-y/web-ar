@@ -3,7 +3,7 @@
 var search = window.location.search;
 var data = getSearchString('res', search);
 var jsonData = JSON.stringify(data);// 转成JSON格式
-var result = json.parse(jsonData)
+var result = JSON.parse(jsonData)
 // alert(data.lat+"www")
 var x=document.querySelector("#test")
 x.innerHTML=result
