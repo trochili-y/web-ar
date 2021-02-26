@@ -6,12 +6,14 @@ if(navigator.geolocation){
   }
   //定位数据获取成功响应
   function  onSuccess(position){
-        alert('纬度: '          + position.coords.latitude          + '\n' +
-        '经度: '         + position.coords.longitude         + '\n' +
-        '海拔: '          + position.coords.altitude          + '\n' +
-        '水平精度: '          + position.coords.accuracy          + '\n' +
-        '垂直精度: ' + position.coords.altitudeAccura)
+        // alert('纬度: '          + position.coords.latitude          + '\n' +
+        // '经度: '         + position.coords.longitude         + '\n' +
+        // '海拔: '          + position.coords.altitude          + '\n' +
+        // '水平精度: '          + position.coords.accuracy          + '\n' +
+        // '垂直精度: ' + position.coords.altitudeAccura)
+        var latitude=position.coords.latitude  
   }
+ alert(latitude)
   //定位数据获取失败响应
   function onError(error) {
     switch(error.code)
