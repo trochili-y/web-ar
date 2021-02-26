@@ -2,9 +2,10 @@
 
 var search = window.location.search;
 var data = getSearchString('res', search);
+var obj=JSON.stringfity(data)
 // alert(data.lat+"www")
 var x=document.querySelector("#test")
-x.innerHTML=data[0]
+x.innerHTML=obj
 
 
 if(navigator.geolocation){
