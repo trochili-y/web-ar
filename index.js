@@ -5,7 +5,7 @@ var data = getSearchString('res', search);
 // var jsonData = JSON.stringify(data);// 转成JSON格式
 // var result = JSON.parse(date)
 // alert(data.lat+"www")
-// var x=document.querySelector("#test")
+var x=document.querySelector("#test")
 x.innerHTML=data
 alert(data)
 
