@@ -38,6 +38,8 @@ if(navigator.geolocation){
             // var data = getSearchString('data', search);
             // alert(data)
   }
+  var x = document.querySelector("#position")
+x.innerHTML = lat + "+" + lng
   //定位数据获取失败响应
   function onError(error) {
     switch(error.code)
@@ -129,6 +131,8 @@ AMap.service(["AMap.PlaceSearch"], function() {
     placeSearch.searchNearBy('', centerPoint, 200, function(status, result) {
         if(result.info === 'OK') {
             console.log(result);
+            var poi_data = document.querySelector("#poi_info")
+            poi_data.innerHTML=poi_data
             var locationList = result.poiList.pois; // 周边地标建筑列表
             // 生成地址列表html　　　　　　　　　 createLocationHtml(locationList);
         } else {
