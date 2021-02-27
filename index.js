@@ -1,6 +1,7 @@
 // import { getMyAddress } from "./request";
 // 获取URL
 var search = window.location.search;
+alert(search)
 // 获取经纬度
 var data = getSearchString('res', search);
 // 转换为JSON
