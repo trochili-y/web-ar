@@ -3,11 +3,10 @@
 var search = window.location.search;
 var data = getSearchString('res', search);
 // var jsonData = JSON.stringify(data);// 转成JSON格式
-// var result = JSON.parse(date)
-// alert(data.lat+"www")
+var result = JSON.parse(date)
 var x=document.querySelector("#test")
-x.innerHTML=data
-alert(data)
+x.innerHTML=result.lat
+alert(result)
 
 
 // if(navigator.geolocation){
