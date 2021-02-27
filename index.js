@@ -17,7 +17,7 @@ x.innerHTML = result.lat + "+" + result.lng
 // var poi_info = document.querySelector("#poi_info")
 // poi_info.innerHTML = poi_data_res.pois
 */
-var lat,lng
+var lat=0,lng=0
 if(navigator.geolocation){
     navigator.geolocation.getCurrentPosition(onSuccess , onError);
   }else{
