@@ -33,15 +33,15 @@
     </script>
     <a-scene  cursor='rayOrigin: mouse; fuse: true; fuseTimeout: 0;'
     raycaster="objects: [gps-entity-place];"
-    vr-mode-ui="enabled: false"
+  
     embedded
     arjs='sourceType: webcam; sourceWidth:1280; sourceHeight:960; displayWidth: 1280; displayHeight: 960; debugUIEnabled: false;'>
         <a-camera locationfinder gps-camera rotation-reader>
         </a-camera>
     </a-scene>
-    <a-text value="培正一番111111111" scale="15 15 15" look-at="[gps-camera]" align="center"
+    <a-text value="培正一番111111111" scale="1000 1000 1000" look-at="[gps-camera]" align="center"
         gps-entity_place="latitude:23.409054;longitude:113.089179;"></a-text>
-    <a-text value="wwwwwwsaf" scale="15 15 15" look-at="[gps-camera]" align="center"
+    <a-text value="wwwwwwsaf" scale="150 150 150" look-at="[gps-camera]" align="center"
         gps-entity_place="latitude:23.403277;longitude:113.218478;"></a-text>
     <script src="index.js"></script>
 
