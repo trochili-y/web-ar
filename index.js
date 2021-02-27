@@ -12,9 +12,9 @@ x.innerHTML=result.lat+"+"+result.lng
 // 获取小程序传过来的位置数据包括周边、距离等
 var poi_data = getSearchString('poi_data', search);
 // 转换为JSON数据
-// var poi_data_res=JSON.parse(poi_data)
+var poi_data_res=JSON.parse(decodeURIComponent(options.poi_data))
 var poi_info=document.querySelector("#poi_info")
-poi_info.innerHTML=poi_data.pois
+poi_info.innerHTML=poi_data_res.pois
 
 // if(navigator.geolocation){
 //     navigator.geolocation.getCurrentPosition(onSuccess , onError);
