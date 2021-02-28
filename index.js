@@ -86,6 +86,7 @@ function onComplete(obj){
                 const desc = document.createElement('a-text');
                 desc.setAttribute('value',place.name)
                 icon.appendChild(desc)
+                desc.innerHTML=place.name
                 icon.addEventListener('loaded', () => window.dispatchEvent(new CustomEvent('gps-entity-place-loaded')));
 
                 const clickListener = function(ev) {
