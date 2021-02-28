@@ -50,6 +50,24 @@ function onComplete(obj){
             if(result.info === 'OK') {
                 console.log(result);
                 var locationList = result.poiList.pois; // 周边地标建筑列表
+                const scene = document.querySelector('a-scene');
+                locationList.forEach((place) => {
+                  const latitude = place.location.lat;
+                  const longitude = place.location.lng;
+
+                  // add place name
+                  const text = document.createElement('a-link');
+                  text.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
+                  text.setAttribute('title', place.name);
+                  text.setAttribute('href', 'http://www.baidu.com/');
+                  text.setAttribute('scale', '20 20 20');
+
+                  text.addEventListener('loaded', () => {
+                      window.dispatchEvent(new CustomEvent('gps-entity-place-loaded'))
+                  });
+
+                  scene.appendChild(text);
+              });
                 // 生成地址列表html　　　　　　　　　 createLocationHtml(locationList);
             } else {
                 console.log('获取位置信息失败!');
