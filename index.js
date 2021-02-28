@@ -83,7 +83,9 @@ function onComplete(obj){
 
                 // for debug purposes, just show in a bigger scale, otherwise I have to personally go on places...
                 icon.setAttribute('scale', '20, 20');
-
+                const desc = document.createElement('a-text');
+                desc.setAttribute('value',place.name)
+                icon.appendChild(desc)
                 icon.addEventListener('loaded', () => window.dispatchEvent(new CustomEvent('gps-entity-place-loaded')));
 
                 const clickListener = function(ev) {
@@ -108,7 +110,7 @@ function onComplete(obj){
                     }
                 };
 
-                icon.addEventListener('click', clickListener);
+                icon.addEventListener('tap', clickListener);
                 
                 scene.appendChild(icon);
             });
