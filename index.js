@@ -51,23 +51,66 @@ function onComplete(obj){
                 console.log(result);
                 var locationList = result.poiList.pois; // 周边地标建筑列表
                 const scene = document.querySelector('a-scene');
-                locationList.forEach((place) => {
-                  const latitude = place.location.lat;
-                  const longitude = place.location.lng;
+              //   locationList.forEach((place) => {
+              //     const latitude = place.location.lat;
+              //     const longitude = place.location.lng;
 
-                  // add place name
-                  const text = document.createElement('a-link');
-                  text.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
-                  text.setAttribute('title', place.name);
-                  text.setAttribute('href', 'http://www.baidu.com/');
-                  text.setAttribute('scale', '20 20 20');
+              //     // add place name
+              //     const text = document.createElement('a-link');
+              //     text.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
+              //     text.setAttribute('title', place.name);
+              //     text.setAttribute('href', 'http://www.baidu.com/');
+              //     text.setAttribute('scale', '20 20 20');
 
-                  text.addEventListener('loaded', () => {
-                      window.dispatchEvent(new CustomEvent('gps-entity-place-loaded'))
-                  });
+              //     text.addEventListener('loaded', () => {
+              //         window.dispatchEvent(new CustomEvent('gps-entity-place-loaded'))
+              //     });
 
-                  scene.appendChild(text);
-              });
+              //     scene.appendChild(text);
+              // });
+            //-------------------------------------------------------------
+            locationList.forEach((place) => {
+                const latitude = place.location.lat;
+                const longitude = place.location.lng;
+
+                // add place icon
+                const icon = document.createElement('a-image');
+                icon.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude}`);
+                icon.setAttribute('name', place.name);
+                icon.setAttribute('src', '../assets/map-marker.png');
+
+                // for debug purposes, just show in a bigger scale, otherwise I have to personally go on places...
+                icon.setAttribute('scale', '20, 20');
+
+                icon.addEventListener('loaded', () => window.dispatchEvent(new CustomEvent('gps-entity-place-loaded')));
+
+                const clickListener = function(ev) {
+                    ev.stopPropagation();
+                    ev.preventDefault();
+
+                    const name = ev.target.getAttribute('name');
+
+                    const el = ev.detail.intersection && ev.detail.intersection.object.el;
+
+                    if (el && el === ev.target) {
+                        const label = document.createElement('span');
+                        const container = document.createElement('div');
+                        container.setAttribute('id', 'place-label');
+                        label.innerText = name;
+                        container.appendChild(label);
+                        document.body.appendChild(container);
+
+                        setTimeout(() => {
+                            container.parentElement.removeChild(container);
+                        }, 1500);
+                    }
+                };
+
+                icon.addEventListener('click', clickListener);
+                
+                scene.appendChild(icon);
+            });
+            //-------------------------------------------------------------
                 // 生成地址列表html　　　　　　　　　 createLocationHtml(locationList);
             } else {
                 console.log('获取位置信息失败!');
