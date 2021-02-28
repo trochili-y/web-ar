@@ -46,7 +46,7 @@ function onComplete(obj){
         // 第二个参数是经纬度，数组类型
         // 第三个参数是半径，周边的范围
         // 第四个参数为回调函数
-        placeSearch.searchNearBy('', centerPoint, 200, function(status, result) {
+        placeSearch.searchNearBy('', centerPoint, 1000, function(status, result) {
             if(result.info === 'OK') {
                 console.log(result);
                 var locationList = result.poiList.pois; // 周边地标建筑列表
