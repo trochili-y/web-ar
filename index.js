@@ -85,6 +85,7 @@ function onComplete(obj){
                 icon.setAttribute('scale', '20, 20');
                 const desc = document.createElement('a-text');
                 desc.setAttribute('value',place.name)
+                desc.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude}`);
                 icon.appendChild(desc)
                 desc.innerHTML=place.name
                 icon.addEventListener('loaded', () => window.dispatchEvent(new CustomEvent('gps-entity-place-loaded')));
