@@ -3,7 +3,7 @@
   var map = new AMap.Map('container', {
     resizeEnable: true,
     zoom: 11,
-    center: [116.397428, 39.90923]
+    center: [113.218478, 23.403277]
 });
  //初始化定位
  map.plugin('AMap.Geolocation', function () {
