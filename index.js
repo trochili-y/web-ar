@@ -86,7 +86,8 @@ function onComplete(obj){
                 const desc = document.createElement('a-text');
                 desc.setAttribute('value',place.name)
                 desc.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude}`);
-                icon.appendChild(desc)
+                desc.setAttribute('look-at','[gps-camera]')
+                scene.appendChild(desc)
                 // desc.innerHTML=place.name
                 icon.addEventListener('loaded', () => window.dispatchEvent(new CustomEvent('gps-entity-place-loaded')));
 
