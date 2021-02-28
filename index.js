@@ -4,6 +4,8 @@
     resizeEnable: true,
     zoom: 11,
     center: [113.218478, 23.403277]
+    // center: [116.218478, 26.403277]
+
 });
  //初始化定位
  map.plugin('AMap.Geolocation', function () {
@@ -95,7 +97,7 @@ function onComplete(obj){
                     if (el && el === ev.target) {
                         const label = document.createElement('span');
                         const container = document.createElement('div');
-                        container.setAttribute('id', 'place.id');
+                        container.setAttribute('id', 'place-label');
                         label.innerText = name;
                         container.appendChild(label);
                         document.body.appendChild(container);
