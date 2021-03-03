@@ -28,13 +28,13 @@
   AMap.event.addListener(geolocation, 'error', onError);      //返回定位出错信息
 });
 function onComplete(obj){
-  // var res = '经纬度：' + obj.position +
-  //     '\n精度范围：' + obj.accuracy +
-  //     '米\n定位结果的来源：' + obj.location_type +
-  //     '\n状态信息：' + obj.info +
-  //     '\n地址：' + obj.formattedAddress +
-  //     '\n地址信息：' + JSON.stringify(obj.addressComponent, null, 4);
-  // console.log("当前位置信息"+res);
+//   var res = '经纬度：' + obj.position +
+//       '\n精度范围：' + obj.accuracy +
+//       '米\n定位结果的来源：' + obj.location_type +
+//       '\n状态信息：' + obj.info +
+//       '\n地址：' + obj.formattedAddress +
+//       '\n地址信息：' + JSON.stringify(obj.addressComponent, null, 4);
+//   console.log("当前位置信息"+res);
   // 高德地图查询周边
   function aMapSearchNearBy(centerPoint, city) {
     AMap.service(["AMap.PlaceSearch"], function() {
@@ -83,12 +83,12 @@ function onComplete(obj){
 
                 // for debug purposes, just show in a bigger scale, otherwise I have to personally go on places...
                 icon.setAttribute('scale', '20, 20');
-                const desc = document.createElement('a-text');
-                desc.setAttribute('value',place.name)
-                desc.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude}`);
-                desc.setAttribute('look-at','[gps-camera]')
+                // const desc = document.createElement('a-text');
+                // desc.setAttribute('value',place.name)
+                // desc.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude}`);
+                // desc.setAttribute('look-at','[gps-camera]')
               
-                scene.appendChild(desc)
+                // scene.appendChild(desc)
                 // desc.innerHTML=place.name
                 icon.addEventListener('loaded', () => window.dispatchEvent(new CustomEvent('gps-entity-place-loaded')));
 
